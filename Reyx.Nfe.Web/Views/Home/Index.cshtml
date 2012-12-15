@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table>
+    @if (string.IsNullOrEmpty(ViewBag.Error))
+    {
+        foreach (var agency in ViewBag.agencies)
+        {
+            <tr>
+                <td>@agency.Uniorg</td>
+                <td>@agency.Name</td>
+            </tr>
+        }
+    }
+    else
+    {
+        @ViewBag.Error
+    }
+</table>

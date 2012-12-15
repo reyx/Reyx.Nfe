@@ -1,0 +1,221 @@
+* { margin: 0; padding: 0; font-size: 14px; }
+
+body
+{
+    
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    color: #232323;
+}
+
+div[region="north"],
+div[region="south"]
+{
+    background: #fafafa;
+}
+
+/* form */
+input[type="text"], 
+input[type="checkbox"] { height: 20px; }
+
+legend { border-bottom: solid 1px #dddddd; float: left; width: 100%; }
+label { line-height: 22px; margin: 5px 4px; }
+
+input, textarea, select { border: 1px solid #bbbbbb; margin: 5px; }
+input, textarea, select, label { float: left;  }
+select { height: 22px; line-height: 22px; padding: 1px; }
+
+.clear { clear: both; }
+.align-left { text-align: left; }
+.align-center{ text-align: center; }
+.align-right { text-align: right; }
+
+.width-10 { width: 10px; }
+.width-20 { width: 20px; }
+.width-30 { width: 30px; }
+.width-40 { width: 40px; }
+.width-50 { width: 50px; }
+.width-60 { width: 60px; }
+.width-70 { width: 70px; }
+.width-80 { width: 80px; }
+.width-90 { width: 90px; }
+
+.width-100 { width: 100px; }
+.width-110 { width: 110px; }
+.width-120 { width: 120px; }
+.width-130 { width: 130px; }
+.width-140 { width: 140px; }
+.width-150 { width: 150px; }
+.width-160 { width: 160px; }
+.width-170 { width: 170px; }
+.width-180 { width: 180px; }
+.width-190 { width: 190px; }
+
+.width-200 { width: 200px; }
+.width-210 { width: 210px; }
+.width-220 { width: 220px; }
+.width-230 { width: 230px; }
+.width-240 { width: 240px; }
+.width-250 { width: 250px; }
+.width-260 { width: 260px; }
+.width-270 { width: 270px; }
+.width-280 { width: 280px; }
+.width-290 { width: 290px; }
+
+.width-300 { width: 300px; }
+.width-310 { width: 310px; }
+.width-320 { width: 320px; }
+.width-330 { width: 330px; }
+.width-340 { width: 340px; }
+.width-350 { width: 350px; }
+.width-360 { width: 360px; }
+.width-370 { width: 370px; }
+.width-380 { width: 380px; }
+.width-390 { width: 390px; }
+
+.width-400 { width: 400px; }
+.width-410 { width: 410px; }
+.width-420 { width: 420px; }
+.width-430 { width: 430px; }
+.width-440 { width: 440px; }
+.width-450 { width: 450px; }
+.width-460 { width: 460px; }
+.width-470 { width: 470px; }
+.width-480 { width: 480px; }
+.width-490 { width: 490px; }
+
+.width-500 { width: 500px; }
+.width-510 { width: 510px; }
+.width-520 { width: 520px; }
+.width-530 { width: 530px; }
+.width-540 { width: 540px; }
+.width-550 { width: 550px; }
+.width-560 { width: 560px; }
+.width-570 { width: 570px; }
+.width-580 { width: 580px; }
+.width-590 { width: 590px; }
+
+.width-600 { width: 600px; }
+.width-610 { width: 610px; }
+.width-620 { width: 620px; }
+.width-630 { width: 630px; }
+.width-640 { width: 640px; }
+.width-650 { width: 650px; }
+.width-660 { width: 660px; }
+.width-670 { width: 670px; }
+.width-680 { width: 680px; }
+.width-690 { width: 690px; }
+
+.width-700 { width: 700px; }
+.width-710 { width: 710px; }
+.width-720 { width: 720px; }
+.width-730 { width: 730px; }
+.width-740 { width: 740px; }
+.width-750 { width: 750px; }
+.width-760 { width: 760px; }
+.width-770 { width: 770px; }
+.width-780 { width: 780px; }
+.width-790 { width: 790px; }
+
+.width-800 { width: 800px; }
+.width-810 { width: 810px; }
+.width-820 { width: 820px; }
+.width-830 { width: 830px; }
+.width-840 { width: 840px; }
+.width-850 { width: 850px; }
+.width-860 { width: 860px; }
+.width-870 { width: 870px; }
+.width-880 { width: 880px; }
+.width-890 { width: 890px; }
+
+select.width-60 { width: 62px; }
+select.width-70 { width: 72px; }
+select.width-80 { width: 82px; }
+select.width-90 { width: 92px; }
+
+select.width-100 { width: 102px; }
+select.width-110 { width: 112px; }
+select.width-120 { width: 122px; }
+select.width-130 { width: 132px; }
+select.width-140 { width: 142px; }
+select.width-150 { width: 152px; }
+select.width-160 { width: 162px; }
+select.width-170 { width: 172px; }
+select.width-180 { width: 182px; }
+select.width-190 { width: 192px; }
+
+select.width-200 { width: 202px; }
+select.width-210 { width: 212px; }
+select.width-220 { width: 222px; }
+select.width-230 { width: 232px; }
+select.width-240 { width: 242px; }
+select.width-250 { width: 252px; }
+select.width-260 { width: 262px; }
+select.width-270 { width: 272px; }
+select.width-280 { width: 282px; }
+select.width-290 { width: 292px; }
+
+select.width-300 { width: 302px; }
+select.width-310 { width: 312px; }
+select.width-320 { width: 322px; }
+select.width-330 { width: 332px; }
+select.width-340 { width: 342px; }
+select.width-350 { width: 352px; }
+select.width-360 { width: 362px; }
+select.width-370 { width: 372px; }
+select.width-380 { width: 382px; }
+select.width-390 { width: 392px; }
+
+select.width-400 { width: 402px; }
+select.width-410 { width: 412px; }
+select.width-420 { width: 422px; }
+select.width-430 { width: 432px; }
+select.width-440 { width: 442px; }
+select.width-450 { width: 452px; }
+select.width-460 { width: 462px; }
+select.width-470 { width: 472px; }
+select.width-480 { width: 482px; }
+select.width-490 { width: 492px; }
+
+select.width-500 { width: 502px; }
+select.width-510 { width: 512px; }
+select.width-520 { width: 522px; }
+select.width-530 { width: 532px; }
+select.width-540 { width: 542px; }
+select.width-550 { width: 552px; }
+select.width-560 { width: 562px; }
+select.width-570 { width: 572px; }
+select.width-580 { width: 582px; }
+select.width-590 { width: 592px; }
+
+select.width-600 { width: 602px; }
+select.width-610 { width: 612px; }
+select.width-620 { width: 622px; }
+select.width-630 { width: 632px; }
+select.width-640 { width: 642px; }
+select.width-650 { width: 652px; }
+select.width-660 { width: 662px; }
+select.width-670 { width: 672px; }
+select.width-680 { width: 682px; }
+select.width-690 { width: 692px; }
+
+select.width-700 { width: 702px; }
+select.width-710 { width: 712px; }
+select.width-720 { width: 722px; }
+select.width-730 { width: 732px; }
+select.width-740 { width: 742px; }
+select.width-750 { width: 752px; }
+select.width-760 { width: 762px; }
+select.width-770 { width: 772px; }
+select.width-780 { width: 782px; }
+select.width-790 { width: 792px; }
+
+select.width-800 { width: 802px; }
+select.width-810 { width: 812px; }
+select.width-820 { width: 822px; }
+select.width-830 { width: 832px; }
+select.width-840 { width: 842px; }
+select.width-850 { width: 852px; }
+select.width-860 { width: 862px; }
+select.width-870 { width: 872px; }
+select.width-880 { width: 882px; }
+select.width-890 { width: 892px; }

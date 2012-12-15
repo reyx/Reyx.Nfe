@@ -1,0 +1,494 @@
+﻿@{
+    ViewBag.Title = "Digitacao";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.Hidden("ID_PDVD", "")
+@Html.Hidden("fiscalId", "")
+@Html.Hidden("STATUS_PDVD", "")
+
+<div style="width: 900px; margin: 8px auto;">
+    <div style="text-align: right;margin-bottom:8px;">
+        <a href="#" class="btn">Gravar</a>  
+        <a href="#" class="btn">Nota Fiscal</a>
+        <a href="#" class="btn">Retornar</a>
+    </div>
+
+    <fieldset class="easyui-panel" title="Dados do Pedido" collapsible="true" style="padding:8px;margin-bottom:8px;">        
+        <label id="status">Em Aberto</label>
+
+        <label class="width-100 clear align-right">Natureza</label>
+        <input type="text" class="width-100" />
+
+        <label for="nPed">Número</label>
+        <input type="text" class="width-100" id="nPed" title="número do pedido" />
+    
+        <label for="dEmi">Emissão</label>
+        <input type="text" class="width-100" id="dEmi" title="data de emissão" />
+    </fieldset>
+
+    <div class="easyui-layout" style="widht: 900px;height:240px;">
+        <div region="west" title="Dados do Emitente" style="width:450px;padding: 8px 0;">
+            <label class="width-80 align-right">Razão Social</label>
+            <input type="text" class="width-340" />
+
+            <label class="width-80 align-right">CNPJ</label>
+            <input type="text" class="width-150" />
+
+            <label class="width-20 align-right">IE</label>
+            <input type="text" class="width-150 align-center" />
+
+            <label class="width-80 align-right">CEP</label>
+            <input type="text" class="width-80" />
+
+            <label class="width-40 align-right">Bairro</label>
+            <select class="width-200"></select>
+            
+            <label class="width-80 clear align-right">UF</label>
+            <select class="width-60"></select>
+
+            <label class="width-40 align-right">Cidade</label>
+            <select class="width-220"></select>
+            
+            <label class="width-80 align-right">Logradouro</label>
+            <input type="text" class="width-260" />
+            
+            <label class="width-20 align-right">nº</label>
+            <input type="text" class="width-40 align-right" />
+            
+            <label class="width-80 align-right">Complemento</label>
+            <input type="text" class="width-80" />
+
+            <label class="width-60 align-right">Telefone</label>
+            <input type="text" class="width-100" />
+
+            <fieldset>
+                <legend><input type="checkbox" /> Endereço de Retirada diferente</legend>
+            </fieldset>
+        </div>
+
+        <div region="center" title="Dados do Cliente" style="padding: 8px 0;">
+            <label class="width-80 align-right">Razão Social</label>
+            <input type="text" class="width-340" />
+
+            <label class="width-80 align-right">CNPJ</label>
+            <input type="text" class="width-150" />
+
+            <label class="width-20 align-right">IE</label>
+            <input type="text" class="width-150 align-center" />
+
+            <label class="width-80 align-right">CEP</label>
+            <input type="text" class="width-80" />
+
+            <label class="width-40 align-right">Bairro</label>
+            <select class="width-200"></select>
+            
+            <label class="width-80 clear align-right">UF</label>
+            <select class="width-60"></select>
+
+            <label class="width-40 align-right">Cidade</label>
+            <select class="width-220"></select>
+            
+            <label class="width-80 align-right">Logradouro</label>
+            <input type="text" class="width-260" />
+            
+            <label class="width-20 align-right">nº</label>
+            <input type="text" class="width-40 align-right" />
+            
+            <label class="width-80 align-right">Complemento</label>
+            <input type="text" class="width-80" />
+
+            <label class="width-60 align-right">Telefone</label>
+            <input type="text" class="width-100" />
+        </div>
+    </div>
+
+    <div id="tt" class="easyui-tabs" style="margin:8px 0;">
+        <div title="Produtos e Serviços" style="padding:8px;">
+            <table id="det"></table>
+            <div id="tb">  
+                <a href="#" class="easyui-linkbutton" plain="true" onclick="javascript:product()">Adicionar</a>
+            </div>  
+        </div>
+        <div title="Pagamentos" style="padding:8px;">
+            <label for="cPag">Condição de Pagamento</label>
+            @Html.DropDownList("cPag", new SelectList(new Dictionary<string, string>()), new { @class = "width-300" })
+
+            <div id="cobr"></div>
+        </div>
+        <div title="Transporte" style="padding:8px;">
+            
+            <label for="cTransporta" class="width-100 clear align-right">Transportador</label>
+            <input type="text" class="width-100" id="cTransporta" title="código do transportador" />
+            <a href="javascript:;"><span class="ui-icon ui-icon-search"></span></a>
+            <input type="text" class="width-300" id="xTransporta" title="nome do transportador" />
+
+            <label for="placa" class="width-100 clear align-right">Placa</label>
+            <input type="text" class="width-100" id="placa" title="placa" />
+
+            <label for="modFrete" class="width-100 clear align-right">Frete</label>
+            @Html.DropDownList("modFrete", new SelectList(new Dictionary<string, string>()), new { @class = "width-200" })
+
+            <div class="easyui-panel" title="Retenção de Tributos" style="width:450px;height:200px;">
+                <label for="bICMSTran" class="width-100 align-right">Base Cálculo</label>
+                <input type="text" class="width-100" id="bICMSTran" title="base de cálculo do valor transportado" />
+
+                <label for="aliqTran" class="width-100 align-right">Alíquota</label>
+                <input type="text" class="width-100" id="pTran" title="aliqTran" />
+
+                <label for="vTran" class="width-100 align-right">Valor</label>
+                <input type="text" class="width-100" id="vTran" title="valor do serviço" />
+
+                <label for="vICMSTran" class="width-100 align-right">ICMS Retido</label>
+                <input type="text" class="width-100" id="vICMSTran" title="icms retido" />
+
+                <label for="natOpTransp" class="width-100 clear align-right">Natureza</label>
+                <input type="text" class="width-320" id="natOpTransp" />
+                
+                <label for="natOpTransp" class="width-100 clear align-right">UF</label>
+                @Html.DropDownList("UFTran", new SelectList(new Dictionary<string, string>()), new { @class = "width-60" })
+
+                <label for="natOpTransp" class="width-60 align-right">Município</label>
+                @Html.DropDownList("cidTran", new SelectList(new Dictionary<string, string>()), new { @class = "width-180" })
+            </div>
+
+            <table id="vol"></table>
+            <div id="pVol"></div>
+        </div>
+    </div>
+
+    <fieldset class="easyui-panel" title="Totais" collapsible="true" style="padding:8px;">
+        <label class="width-80 align-right">Base ICMS</label>
+        <input type="text" class="width-80" />
+                                            
+        <label class="width-80 align-right">ICMS</label>
+        <input type="text" class="width-80" />
+                                            
+        <label class="width-80 align-right">Base ICMS ST</label>
+        <input type="text" class="width-80" />
+                                            
+        <label class="width-80 align-right">ICMS ST</label>
+        <input type="text" class="width-80" />
+                                            
+        <label class="width-80 clear align-right">Importações</label>
+        <input type="text" class="width-80" />
+                                            
+        <label class="width-80 align-right">PIS</label>
+        <input type="text" class="width-80" />
+                                            
+        <label class="width-80 align-right">IPI</label>
+        <input type="text" class="width-80" />
+                                            
+        <label class="width-80 align-right">COFINS</label>
+        <input type="text" class="width-80" />
+                                            
+        <label class="width-80 clear align-right">Mercadoria</label>
+        <input type="text" class="width-80" />
+                                            
+        <label class="width-80 align-right">Frete</label>
+        <input type="text" class="width-80" />
+                                            
+        <label class="width-80 align-right">Seguro</label>
+        <input type="text" class="width-80" />
+                                            
+        <label class="width-80 align-right">Desconto</label>
+        <input type="text" class="width-80" />
+                                            
+        <label class="width-80 clear align-right">Outros</label>
+        <input type="text" class="width-80" />
+                                            
+        <label class="width-80 align-right">Total</label>
+        <input type="text" class="width-80" />
+    </fieldset>
+</div>
+
+
+<div id="product" style="padding-top:6px;">
+    <fieldset>
+        <label class="width-80 align-right">Código</label>
+        <input type="text" class="width-110" />
+        <input type="text" class="width-340" />
+        <label class="width-200 align-right">UN</label>
+                                            
+        <label class="width-80 clear align-right">NCM</label>
+        <input type="text" class="width-300" />
+                                            
+        <label class="width-60 align-right">Natureza</label>
+        <input type="text" class="width-300" />
+                                            
+        <label class="width-80 clear align-right">Tipo</label>
+        <select class="width-110"></select>
+                                            
+        <label class="width-70 align-right">Quantidade</label>
+        <input type="text" class="width-100 align-right" />
+                                            
+        <label class="width-60 align-right">Preço</label>
+        <input type="text" class="width-110 align-right" />
+                                            
+        <label class="width-60 align-right">Frete</label>
+        <input type="text" class="width-110 align-right" />
+                                            
+        <label class="width-80 clear align-right">Seguro</label>
+        <input type="text" class="width-110 align-right" />
+                                            
+        <label class="width-70 align-right">Desconto</label>
+        <input type="text" class="width-100 align-right" />
+                                            
+        <label class="width-60 align-right">Outros</label>
+        <input type="text" class="width-110 align-right" />
+                                            
+        <label class="width-60 align-right">Total</label>
+        <input type="text" class="width-110 align-right" />
+    </fieldset>
+
+    <div class="easyui-tabs" plain="true" border="false" style="padding:8px 1px 0;">
+        <div title="Tributos">
+            <div class="easyui-tabs" plain="true" style="padding:8px 8px 0;">
+                <div title="ICMS" style="padding:8px;">
+                    <div class="easyui-layout" style="height:200px;">
+                        <div region="north" style="padding: 6px 0;border-bottom:none;overflow:hidden;">
+                            <label class="width-80 align-right">Situação</label>
+                            <select class="width-400"></select>
+
+                            <label class="width-60 align-right">Origem</label>
+                            <select class="width-160" ></select>
+                        </div>
+                        <div region="west" title="ICMS" style="width:380px">
+                            <label class="width-80 align-right">Modalidde</label>
+                            <select class="width-140" ></select>
+                                
+                            <label class="width-80 clear align-right">% Redução</label>
+                            <input type="text" class="width-80 align-right" disabled="disabled" />
+                                
+                            <label class="width-80 align-right">Base Cálculo</label>
+                            <input type="text" class="width-80 align-right" />
+                                
+                            <label class="width-80 clear align-right">Alíquota</label>
+                            <input type="text" class="width-80 align-right" />
+                                
+                            <label class="width-80 align-right">Valor</label>
+                            <input type="text" class="width-80 align-right" />
+                        </div>
+                        <div region="center" title="ICMS ST">
+                            <label class="width-80 align-right">Modalidde</label>
+                            <select class="width-140" ></select>
+                                
+                            <label class="width-80 clear align-right">% Redução</label>
+                            <input type="text" class="width-80 align-right" />
+
+                            <label class="width-80 align-right">% MVA</label>
+                            <input type="text" class="width-80 align-right" />
+                                
+                            <label class="width-80 clear align-right">Base Cálculo</label>
+                            <input type="text" class="width-80 align-right" />
+                                
+                            <label class="width-80 align-right">Alíquota</label>
+                            <input type="text" class="width-80 align-right" />
+                                
+                            <label class="width-80 clear align-right">Valor</label>
+                            <input type="text" class="width-80 align-right" />
+                        </div>
+                    </div>
+                </div>
+                <div title="IPI" style="padding:8px;">
+                </div>
+                <div title="PIS" style="padding:8px;">
+                    <div class="easyui-layout" style="height:200px;">
+                        <div region="north" style="padding: 6px 0;border-bottom:none;overflow:hidden;">
+                            <label class="width-80 align-right">Situação</label>
+                            <select class="width-400"></select>
+                        </div>
+                        <div region="west" title="PIS" style="width:380px">                            
+                            <label class="width-80 align-right">Cálculo</label>
+                            <select class="width-140" ></select>
+                                
+                            <label class="width-80 clear align-right">Base Cálculo</label>
+                            <input type="text" class="width-80 align-right" disabled="disabled" />
+                                
+                            <label class="width-80 align-right">Alíquota %</label>
+                            <input type="text" class="width-80 align-right" />
+                                
+                            <label class="width-80 clear align-right">Quantidade</label>
+                            <input type="text" class="width-80 align-right" />
+                                
+                            <label class="width-80 align-right">Alíquota $</label>
+                            <input type="text" class="width-80 align-right" />
+                                
+                            <label class="width-80 align-right">Valor</label>
+                            <input type="text" class="width-80 align-right" />
+                        </div>
+                        <div region="center" title="PIS ST">                            
+                            <label class="width-80 align-right">Cálculo</label>
+                            <select class="width-140" ></select>
+                                
+                            <label class="width-80 clear align-right">Base Cálculo</label>
+                            <input type="text" class="width-80 align-right" disabled="disabled" />
+                                
+                            <label class="width-80 align-right">Alíquota %</label>
+                            <input type="text" class="width-80 align-right" />
+                                
+                            <label class="width-80 clear align-right">Quantidade</label>
+                            <input type="text" class="width-80 align-right" />
+                                
+                            <label class="width-80 align-right">Alíquota $</label>
+                            <input type="text" class="width-80 align-right" />
+                                
+                            <label class="width-80 align-right">Valor</label>
+                            <input type="text" class="width-80 align-right" />
+                        </div>
+                    </div>
+                </div>
+                <div title="COFINS" style="padding:8px;">
+                    <div class="easyui-layout" style="height:200px;">
+                        <div region="north" style="padding: 6px 0;border-bottom:none;overflow:hidden;">                            
+                            <label class="width-80 align-right">Situação</label>
+                            <select class="width-400"></select>
+                        </div>
+                        <div region="west" title="COFINS" style="width:380px">
+                            <label class="width-80 align-right">Cálculo</label>
+                            <select class="width-140" ></select>
+                                
+                            <label class="width-80 clear align-right">Base Cálculo</label>
+                            <input type="text" class="width-80 align-right" disabled="disabled" />
+                                
+                            <label class="width-80 align-right">Alíquota %</label>
+                            <input type="text" class="width-80 align-right" />
+                                
+                            <label class="width-80 clear align-right">Quantidade</label>
+                            <input type="text" class="width-80 align-right" />
+                                
+                            <label class="width-80 align-right">Alíquota $</label>
+                            <input type="text" class="width-80 align-right" />
+                                
+                            <label class="width-80 align-right">Valor</label>
+                            <input type="text" class="width-80 align-right" />
+                        </div>
+                        <div region="center" title="COFINS ST">
+                            <label class="width-80 align-right">Cálculo</label>
+                            <select class="width-140" ></select>
+                                
+                            <label class="width-80 clear align-right">Base Cálculo</label>
+                            <input type="text" class="width-80 align-right" disabled="disabled" />
+                                
+                            <label class="width-80 align-right">Alíquota %</label>
+                            <input type="text" class="width-80 align-right" />
+                                
+                            <label class="width-80 clear align-right">Quantidade</label>
+                            <input type="text" class="width-80 align-right" />
+                                
+                            <label class="width-80 align-right">Alíquota $</label>
+                            <input type="text" class="width-80 align-right" />
+                                
+                            <label class="width-80 align-right">Valor</label>
+                            <input type="text" class="width-80 align-right" />
+                        </div>
+                    </div>
+                </div>
+                <div title="Importação" style="padding:8px;">
+                    <table id="ii"></table>
+                </div>
+                <div title="ISSQN" style="padding:8px;">
+                    <label class="width-80 align-right">Tributação</label>
+                    <select class="width-140" ></select>
+                                
+                    <label class="width-80 clear align-right">Serviço</label>
+                    <select class="width-440"></select>
+                                
+                    <label class="width-80 clear align-right">UF</label>
+                    <select class="width-60"></select>
+                                
+                    <label class="width-60 align-right">Município</label>
+                    <select class="width-300"></select>
+
+                    <label class="width-80 clear align-right">Base Cálculo</label>
+                    <input type="text" class="width-100 align-right" />
+                                
+                    <label class="width-60 align-right">Alíquota</label>
+                    <input type="text" class="width-100 align-right" />
+
+                    <label class="width-40 align-right">Valor</label>
+                    <input type="text" class="width-100 align-right" />
+                </div>
+            </div>
+        </div>
+        <div title="Informações Adicionais" style="padding:8px;">
+            <textarea class="width-760" rows="12"></textarea>
+        </div>
+        <div title="Declaração de Imposto" style="padding:8px;">
+        
+        </div>
+        <div title="Veículo Novo" disabled="true" style="padding:8px;">
+        
+        </div>
+        <div title="Medicamento" style="padding:8px;">
+        
+        </div>
+        <div title="Combustível" style="padding:8px;">
+        
+        </div>
+        <div title="Armamento" style="padding:8px;">
+        
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $('.btn').linkbutton();
+
+        $('#det').datagrid({
+            height: 260,
+            width: 884,
+            striped: true,
+            pagination: true,
+            toolbar: "#tb",
+            fitColumns: true,
+            columns: [[
+                { field: 'id', title: 'Código', width: 80, align: 'align-right'/*, checkbox: true*/ },
+                { field: 'xNome', title: 'Descrição', width: 250 },
+                //{ field: 'CST', title: 'CST', width: 40, align: 'center' },
+                //{ field: 'NCM', title: 'NCM', width: 60, align: 'center' },
+                //{ field: 'CFOP', title: 'CFOP', width: 40, align: 'center' },
+                {field: 'UN', title: 'UN', width: 50, align: 'center' },
+                { field: 'Quantidade', title: 'Quantidade', width: 100, align: 'right' },
+                { field: 'Preço', title: 'Preço', width: 100, align: 'right' },
+                { field: 'Total', title: 'Total', width: 100, align: 'right' },
+                //{ field: 'BICMS', title: 'B ICMS', width: 70, align: 'right' },
+                //{ field: 'ICMS', title: 'ICMS', width: 70, align: 'right' },
+                {field: 'action', title: '', width: 80, align: 'right' }
+            ]]
+        });
+        $('#vol').datagrid({
+            title: 'Volumes',
+            width: 882,
+            pagination: true,
+            columns: [[
+                { field: 'price', title: 'Numeração', width: 120, align: 'right' },
+                { field: 'name', title: 'Espécie', width: 220 },
+                { field: 'price', title: 'Marca', width: 220 },
+                { field: 'code', title: 'Qtde', width: 100, align: 'right' },
+                { field: 'price', title: 'Peso Liq', width: 100, align: 'right' },
+                { field: 'price', title: 'Peso Brt', width: 100, align: 'right' }
+            ]]
+        });
+
+        $('.endereco').panel({
+            top: 8,
+            title: 'Endereço de Retirada Diferente'
+        });
+
+        $('#product').dialog({
+            width: 800,
+            height: 500,
+            border: false,
+            title: 'Edição de Item',
+            modal: true,
+            buttons: [{ text: 'Gravar'}],
+            closed: true
+        });
+    });
+
+    function product() {
+        $('#product').dialog('open');
+    }
+</script>

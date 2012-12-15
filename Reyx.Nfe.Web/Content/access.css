@@ -1,0 +1,10 @@
+﻿body, html { margin: 0; padding: 0; }
+.faixa, .form { position: absolute; height: 238px; top: 50%; margin-top: -119px; }
+
+.faixa { background: url(../content/images/faixa.jpg); width: 100%; }
+.form { background: url(../content/images/form.jpg); width:348px; margin-left: -174px; left: 50%; }
+.form > div { margin-top: 60px; }
+
+input[type="text"], 
+input[type="password"] { padding: 2px; width: 200px; margin: 15px 75px; color: #666; font-weight: bold; }
+input[type="submit"] { padding: 6px 16px; float: right; margin: 30px 8px; }

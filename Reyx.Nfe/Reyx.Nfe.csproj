@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{12520D2A-51F6-4EE9-AAE8-6751E4DEA623}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Reyx.Nfe</RootNamespace>
+    <AssemblyName>Reyx.Nfe</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Reyx.Nfe.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="INFe.cs" />
+    <Compile Include="IUtil.cs" />
+    <Compile Include="IWebServices.cs" />
+    <Compile Include="NFe.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Schema200\cancNFe.cs" />
+    <Compile Include="Schema200\detEvento.cs" />
+    <Compile Include="Schema200\Envio\infEvento.cs" />
+    <Compile Include="Schema200\evento.cs" />
+    <Compile Include="Schema200\Envio\envCCe.cs" />
+    <Compile Include="Schema200\Retorno\infEvento.cs" />
+    <Compile Include="Schema200\refEvento.cs" />
+    <Compile Include="Schema200\Retorno\retEnvCCe.cs" />
+    <Compile Include="Schema200\infCanc.cs" />
+    <Compile Include="Schema200\infRec.cs" />
+    <Compile Include="Schema200\Members\infCanc.cs" />
+    <Compile Include="Schema200\infCons.cs" />
+    <Compile Include="Schema200\infInut.cs" />
+    <Compile Include="Schema200\Members\adi.cs" />
+    <Compile Include="Schema200\Members\arma.cs" />
+    <Compile Include="Schema200\Members\avulsa.cs" />
+    <Compile Include="Schema200\Members\cana.cs" />
+    <Compile Include="Schema200\Members\CIDE.cs" />
+    <Compile Include="Schema200\Members\cobr.cs" />
+    <Compile Include="Schema200\Members\COFINS.cs" />
+    <Compile Include="Schema200\Members\comb.cs" />
+    <Compile Include="Schema200\Members\COFINSAliq.cs" />
+    <Compile Include="Schema200\Members\COFINSNT.cs" />
+    <Compile Include="Schema200\Members\COFINSOutr.cs" />
+    <Compile Include="Schema200\Members\COFINSQtde.cs" />
+    <Compile Include="Schema200\Members\COFINSST.cs" />
+    <Compile Include="Schema200\Members\compra.cs" />
+    <Compile Include="Schema200\Members\deduc.cs" />
+    <Compile Include="Schema200\Members\dest.cs" />
+    <Compile Include="Schema200\Members\DI.cs" />
+    <Compile Include="Schema200\Members\dup.cs" />
+    <Compile Include="Schema200\Members\emit.cs" />
+    <Compile Include="Schema200\Members\ender.cs" />
+    <Compile Include="Schema200\Members\endereco.cs" />
+    <Compile Include="Schema200\Members\enderCom.cs" />
+    <Compile Include="Schema200\Members\exporta.cs" />
+    <Compile Include="Schema200\Members\fat.cs" />
+    <Compile Include="Schema200\Members\forDia.cs" />
+    <Compile Include="Schema200\Members\ICMS.cs" />
+    <Compile Include="Schema200\Members\ICMS00.cs" />
+    <Compile Include="Schema200\Members\ICMS10.cs" />
+    <Compile Include="Schema200\Members\ICMS20.cs" />
+    <Compile Include="Schema200\Members\ICMS30.cs" />
+    <Compile Include="Schema200\Members\ICMS40.cs" />
+    <Compile Include="Schema200\Members\ICMS51.cs" />
+    <Compile Include="Schema200\Members\ICMS60.cs" />
+    <Compile Include="Schema200\Members\ICMS70.cs" />
+    <Compile Include="Schema200\Members\ICMS90.cs" />
+    <Compile Include="Schema200\Members\ICMSPart.cs" />
+    <Compile Include="Schema200\Members\ICMSSN101.cs" />
+    <Compile Include="Schema200\Members\ICMSSN201.cs" />
+    <Compile Include="Schema200\Members\ICMSSN202.cs" />
+    <Compile Include="Schema200\Members\ICMSSN500.cs" />
+    <Compile Include="Schema200\Members\ICMSSN900.cs" />
+    <Compile Include="Schema200\Members\ICMSST.cs" />
+    <Compile Include="Schema200\Members\ICMSTot.cs" />
+    <Compile Include="Schema200\Members\ide.cs" />
+    <Compile Include="Schema200\Members\II.cs" />
+    <Compile Include="Schema200\Members\imposto.cs" />
+    <Compile Include="Schema200\Members\infAdic.cs" />
+    <Compile Include="Schema200\Members\infCad.cs" />
+    <Compile Include="Schema200\Members\infCons.cs" />
+    <Compile Include="Schema200\Members\infInut.cs" />
+    <Compile Include="Schema200\Members\IPI.cs" />
+    <Compile Include="Schema200\Members\IPINT.cs" />
+    <Compile Include="Schema200\Members\IPITrib.cs" />
+    <Compile Include="Schema200\Members\ISSQN.cs" />
+    <Compile Include="Schema200\Members\ISSQNtot.cs" />
+    <Compile Include="Schema200\Members\ICMSSN102.cs" />
+    <Compile Include="Schema200\Members\lacres.cs" />
+    <Compile Include="Schema200\Members\med.cs" />
+    <Compile Include="Schema200\Members\NFref.cs" />
+    <Compile Include="Schema200\Members\obsCont.cs" />
+    <Compile Include="Schema200\Members\obsFisco.cs" />
+    <Compile Include="Schema200\Members\PIS.cs" />
+    <Compile Include="Schema200\Members\PISAliq.cs" />
+    <Compile Include="Schema200\Members\PISNT.cs" />
+    <Compile Include="Schema200\Members\PISOutr.cs" />
+    <Compile Include="Schema200\Members\PISQtde.cs" />
+    <Compile Include="Schema200\Members\PISST.cs" />
+    <Compile Include="Schema200\Members\procRef.cs" />
+    <Compile Include="Schema200\Members\prod.cs" />
+    <Compile Include="Schema200\Members\reboque.cs" />
+    <Compile Include="Schema200\Members\refECF.cs" />
+    <Compile Include="Schema200\Members\refNF.cs" />
+    <Compile Include="Schema200\Members\refNFP.cs" />
+    <Compile Include="Schema200\Members\retTransp.cs" />
+    <Compile Include="Schema200\Members\retTrib.cs" />
+    <Compile Include="Schema200\Members\total.cs" />
+    <Compile Include="Schema200\Members\transp.cs" />
+    <Compile Include="Schema200\Members\transporta.cs" />
+    <Compile Include="Schema200\Members\veicProd.cs" />
+    <Compile Include="Schema200\Members\veicTransp.cs" />
+    <Compile Include="Schema200\Members\vol.cs" />
+    <Compile Include="Schema200\consCad.cs" />
+    <Compile Include="Schema200\consReciNFe.cs" />
+    <Compile Include="Schema200\consSitNFe.cs" />
+    <Compile Include="Schema200\consStatServ.cs" />
+    <Compile Include="Schema200\Members\det.cs" />
+    <Compile Include="Schema200\infProt.cs" />
+    <Compile Include="Schema200\Members\infNFe.cs" />
+    <Compile Include="Schema200\protNFe.cs" />
+    <Compile Include="Schema200\Retorno\retConsCad.cs" />
+    <Compile Include="Schema200\Envio\enviNFe.cs" />
+    <Compile Include="Schema200\inutNFe.cs" />
+    <Compile Include="Schema200\NFe.cs" />
+    <Compile Include="Schema200\Retorno\retConsStatServ.cs" />
+    <Compile Include="Schema200\Retorno\retEnviNFe.cs" />
+    <Compile Include="Schema200\Retorno\retConsReciNFe.cs" />
+    <Compile Include="Schema200\procNFe.cs" />
+    <Compile Include="Schema200\Retorno\retConsSitNFe.cs" />
+    <Compile Include="Schema200\procInutNFe.cs" />
+    <Compile Include="Schema200\Retorno\retInutNFe.cs" />
+    <Compile Include="Schema200\procCancNFe.cs" />
+    <Compile Include="Schema200\Retorno\retCancNFe.cs" />
+    <Compile Include="Util.cs" />
+    <Compile Include="WebServices.cs" />
+    <Compile Include="XmlParser\Xml.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
