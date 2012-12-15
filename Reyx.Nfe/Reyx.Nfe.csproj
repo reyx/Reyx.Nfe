@@ -50,9 +50,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Schema200\cancNFe.cs" />
     <Compile Include="Schema200\detEvento.cs" />
-    <Compile Include="Schema200\Envio\infEvento.cs" />
-    <Compile Include="Schema200\evento.cs" />
-    <Compile Include="Schema200\Envio\envCCe.cs" />
+    <Compile Include="Schema200\Envio\CartaCorrecao\evento.cs" />
+    <Compile Include="Schema200\Envio\Cancelamento\infEvento.cs" />
+    <Compile Include="Schema200\Envio\detEvento.cs" />
+    <Compile Include="Schema200\Envio\CartaCorrecao\infEvento.cs" />
+    <Compile Include="Schema200\Envio\Cancelamento\evento.cs" />
+    <Compile Include="Schema200\Envio\CartaCorrecao\envCCe.cs" />
+    <Compile Include="Schema200\Envio\Cancelamento\evtCancNFe.cs" />
+    <Compile Include="Schema200\Members\evento.cs" />
+    <Compile Include="Schema200\Retorno\retEvento.cs" />
     <Compile Include="Schema200\Retorno\infEvento.cs" />
     <Compile Include="Schema200\refEvento.cs" />
     <Compile Include="Schema200\Retorno\retEnvCCe.cs" />
@@ -155,6 +161,7 @@
     <Compile Include="Schema200\inutNFe.cs" />
     <Compile Include="Schema200\NFe.cs" />
     <Compile Include="Schema200\Retorno\retConsStatServ.cs" />
+    <Compile Include="Schema200\Retorno\retEnvEvento.cs" />
     <Compile Include="Schema200\Retorno\retEnviNFe.cs" />
     <Compile Include="Schema200\Retorno\retConsReciNFe.cs" />
     <Compile Include="Schema200\procNFe.cs" />

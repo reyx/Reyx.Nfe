@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Reyx.Nfe.Schema200.Envio
+namespace Reyx.Nfe.Schema200.Envio.CartaCorrecao
 {
     /// <summary>
     /// 

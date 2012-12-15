@@ -5,7 +5,7 @@ using System.Text;
 using System.Xml.Serialization;
 using System.Collections;
 
-namespace Reyx.Nfe.Schema200
+namespace Reyx.Nfe.Schema200.Envio.CartaCorrecao
 {
     /// <summary>
     /// 
@@ -23,6 +23,6 @@ namespace Reyx.Nfe.Schema200
         /// Grupo de informações do registro do Evento
         /// </summary>
         [XmlElement]
-        public Reyx.Nfe.Schema200.Envio.infEvento infEvento { get; set; }
+        public Reyx.Nfe.Schema200.Envio.CartaCorrecao.infEvento infEvento { get; set; }
     }
 }

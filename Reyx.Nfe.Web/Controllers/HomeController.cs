@@ -6,7 +6,6 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebMatrix.Data;
-using Mono.Data.Tds;
 
 namespace Reyx.Nfe.Web.Controllers
 {

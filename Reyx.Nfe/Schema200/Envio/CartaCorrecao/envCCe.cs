@@ -5,7 +5,7 @@ using System.Text;
 using System.Xml.Serialization;
 using System.Collections;
 
-namespace Reyx.Nfe.Schema200.Envio
+namespace Reyx.Nfe.Schema200.Envio.CartaCorrecao
 {
     /// <summary>
     /// 
@@ -34,6 +34,6 @@ namespace Reyx.Nfe.Schema200.Envio
         /// Evento, um lote pode conter até 20 eventos
         /// </summary>
         [XmlElement]
-        public List<Reyx.Nfe.Schema200.evento> evento { get; set; }
+        public List<Reyx.Nfe.Schema200.Envio.CartaCorrecao.evento> evento { get; set; }
     }
 }
