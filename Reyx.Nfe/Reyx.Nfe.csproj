@@ -56,7 +56,7 @@
     <Compile Include="Schema200\Envio\CartaCorrecao\infEvento.cs" />
     <Compile Include="Schema200\Envio\Cancelamento\evento.cs" />
     <Compile Include="Schema200\Envio\CartaCorrecao\envCCe.cs" />
-    <Compile Include="Schema200\Envio\Cancelamento\evtCancNFe.cs" />
+    <Compile Include="Schema200\Envio\Cancelamento\envEvento.cs" />
     <Compile Include="Schema200\Members\evento.cs" />
     <Compile Include="Schema200\Retorno\retEvento.cs" />
     <Compile Include="Schema200\Retorno\infEvento.cs" />

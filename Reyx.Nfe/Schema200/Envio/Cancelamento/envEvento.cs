@@ -10,7 +10,7 @@ namespace Reyx.Nfe.Schema200.Envio.Cancelamento
     /// 
     /// </summary>
     [XmlRoot(Namespace = "http://www.portalfiscal.inf.br/nfe")]
-    public class evtCancNFe
+    public class envEvento
     {
         /// <summary>
         /// Versão do leiaute
