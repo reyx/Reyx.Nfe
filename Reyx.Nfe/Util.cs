@@ -5,9 +5,8 @@ using System.Text;
 
 namespace Reyx.Nfe
 {
-    class Util : IUtil
+    internal class Util : IUtil
     {
-
         public string Assinar(string XMLString, string RefUri, string NomeTitular, out int resultado, out string msgResultado)
         {
             throw new NotImplementedException();

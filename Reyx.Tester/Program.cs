@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Xml.Linq;
 
@@ -11,38 +12,39 @@ namespace Reyx.Tester
     {
         private static void Main(string[] args)
         {
-            Reyx.Nfe.Schema200.NFe nfe = new Nfe.Schema200.NFe();
-            nfe.infNFe = new Nfe.Schema200.Members.infNFe()
+            Reyx.Nfe.PL_006u.TNFe nfe = new Nfe.PL_006u.TNFe();
+            nfe.infNFe = new Nfe.PL_006u.TNFeInfNFe()
             {
                 versao = "2.00",
                 Id = "NFe35080599999090910270550010000000015180051273",
-                ide = new Nfe.Schema200.Members.ide()
+                ide = new Nfe.PL_006u.TNFeInfNFeIde()
                 {
-                    cUF = "35",
+                    cUF = Nfe.PL_006u.TCodUfIBGE.Item35,
                     cNF = "51800512",
                     natOp = "Venda a vista",
-                    indPag = "0",
-                    mod = "55",
+                    indPag = Nfe.PL_006u.TNFeInfNFeIdeIndPag.Item0,
+                    mod = Nfe.PL_006u.TMod.Item55,
                     serie = "1",
                     nNF = "1",
                     dEmi = "2011-11-20",
                     dSaiEnt = "2008-05-06",
-                    tpNF = "0",
+                    tpNF = Nfe.PL_006u.TNFeInfNFeIdeTpNF.Item0,
                     cMunFG = "3550308",
-                    tpImp = "1",
-                    tpEmis = "1",
+                    tpImp = Nfe.PL_006u.TNFeInfNFeIdeTpImp.Item1,
+                    tpEmis = Nfe.PL_006u.TNFeInfNFeIdeTpEmis.Item1,
                     cDV = "3",
-                    tpAmb = "2",
-                    finNFe = "1",
-                    procEmi = "0",
+                    tpAmb = Nfe.PL_006u.TAmb.Item2,
+                    finNFe = Nfe.PL_006u.TFinNFe.Item1,
+                    procEmi = Nfe.PL_006u.TProcEmi.Item0,
                     verProc = "rcky-01"
                 },
-                emit = new Nfe.Schema200.Members.emit()
+                emit = new Nfe.PL_006u.TNFeInfNFeEmit()
                 {
-                    CNPJ = "99999999000191",
+                    ItemElementName = Nfe.PL_006u.ItemChoiceType2.CNPJ,
+                    Item = "99999999000191",
                     xNome = "NFe",
                     xFant = "NFe",
-                    enderEmit = new Nfe.Schema200.Members.endereco()
+                    enderEmit = new Nfe.PL_006u.TEnderEmi()
                     {
                         xLgr = "Rua Central",
                         nro = "100",
@@ -50,20 +52,21 @@ namespace Reyx.Tester
                         xBairro = "Distrito Industrial",
                         cMun = "3502200",
                         xMun = "Angatuba",
-                        UF = "SP",
+                        UF = Nfe.PL_006u.TUfEmi.SP,
                         CEP = "17100171",
-                        cPais = "1058",
-                        xPais = "Brasil",
+                        cPais = Nfe.PL_006u.TEnderEmiCPais.Item1058,
+                        xPais = Nfe.PL_006u.TEnderEmiXPais.Brasil,
                         fone = "1733021717"
                     },
                     IE = "123456789012",
-                    CRT = "3"
+                    CRT = Nfe.PL_006u.TNFeInfNFeEmitCRT.Item3
                 },
-                dest = new Nfe.Schema200.Members.dest()
+                dest = new Nfe.PL_006u.TNFeInfNFeDest()
                 {
-                    CNPJ = "00000000000191",
+                    ItemElementName = Nfe.PL_006u.ItemChoiceType3.CNPJ,
+                    Item = "00000000000191",
                     xNome = "DISTRIBUIDORA DE AGUAS MINERAIS",
-                    enderDest = new Nfe.Schema200.Members.endereco()
+                    enderDest = new Nfe.PL_006u.TEndereco()
                     {
                         xLgr = "V DAS FONTES",
                         nro = "1777",
@@ -71,40 +74,42 @@ namespace Reyx.Tester
                         xBairro = "Pq Fontes",
                         cMun = "5030801",
                         xMun = "Sao Paulo",
-                        UF = "SP",
+                        UF = Nfe.PL_006u.TUf.SP,
                         CEP = "13950000",
-                        cPais = "1058",
+                        cPais = Nfe.PL_006u.Tpais.Item1058,
                         xPais = "Brasil",
                         fone = "1932011234"
                     },
                     IE = ""
                 },
-                retirada = new Nfe.Schema200.Members.enderCom()
+                retirada = new Nfe.PL_006u.TLocal()
                 {
-                    CNPJ = "99171171000194",
+                    ItemElementName = Nfe.PL_006u.ItemChoiceType4.CNPJ,
+                    Item = "99171171000194",
                     xLgr = "AV PAULISTA",
                     nro = "12345",
                     xCpl = "TERREO",
                     xBairro = "CERQUEIRA CESAR",
                     cMun = "3550308",
                     xMun = "SAO PAULO",
-                    UF = "SP"
+                    UF = Nfe.PL_006u.TUf.SP
                 },
-                entrega = new Nfe.Schema200.Members.enderCom()
+                entrega = new Nfe.PL_006u.TLocal()
                 {
-                    CNPJ = "99299299000194",
+                    ItemElementName = Nfe.PL_006u.ItemChoiceType4.CNPJ,
+                    Item = "99299299000194",
                     xLgr = "AV FARIA LIMA",
                     nro = "1500",
                     xCpl = "15 ANDAR",
                     xBairro = "PINHEIROS",
                     cMun = "3550308",
                     xMun = "SAO PAULO",
-                    UF = "SP"
+                    UF = Nfe.PL_006u.TUf.SP
                 },
-                det = new List<Nfe.Schema200.Members.det>(),
-                total = new Nfe.Schema200.Members.total()
+                det = new List<Nfe.PL_006u.TNFeInfNFeDet>(),
+                total = new Nfe.PL_006u.TNFeInfNFeTotal()
                 {
-                    ICMSTot = new Nfe.Schema200.Members.ICMSTot()
+                    ICMSTot = new Nfe.PL_006u.TNFeInfNFeTotalICMSTot()
                     {
                         vBC = "20000000.00",
                         vICMS = "18.00",
@@ -123,48 +128,54 @@ namespace Reyx.Tester
                         vTotTrib = "0"
                     }
                 },
-                transp = new Nfe.Schema200.Members.transp()
+                transp = new Nfe.PL_006u.TNFeInfNFeTransp()
                 {
-                    modFrete = "0",
-                    transporta = new Nfe.Schema200.Members.transporta()
+                    modFrete = Nfe.PL_006u.TNFeInfNFeTranspModFrete.Item0,
+                    transporta = new Nfe.PL_006u.TNFeInfNFeTranspTransporta()
                     {
-                        CNPJ = "99171171000191",
+                        ItemElementName = Nfe.PL_006u.ItemChoiceType5.CNPJ,
+                        Item = "99171171000191",
                         xNome = "Distribuidora de Bebidas Fazenda de SP Ltda.",
                         IE = "171999999119",
                         xEnder = "Rua Central 100 - Fundos - Distrito Industrial",
                         xMun = "SAO PAULO",
-                        UF = "SP",
+                        UF = Nfe.PL_006u.TUf.SP
                     },
-                    veicTransp = new Nfe.Schema200.Members.veicTransp()
-                    {
-                        placa = "BXI1717",
-                        UF = "SP",
-                        RNTC = "123456789"
-                    },
-                    reboque = new Nfe.Schema200.Members.reboque()
-                    {
-                        placa = "BXI1818",
-                        UF = "SP",
-                        RNTC = "123456789"
-                    },
-                    vol = new List<Nfe.Schema200.Members.vol>()
+                    //veicTransp = new
+                    //{
+                    //    placa = "BXI1717",
+                    //    UF = "SP",
+                    //    RNTC = "123456789"
+                    //},
+                    //reboque = new Nfe.Schema200.Members.reboque()
+                    //{
+                    //    placa = "BXI1818",
+                    //    UF = "SP",
+                    //    RNTC = "123456789"
+                    //},
+                    vol = new List<Nfe.PL_006u.TNFeInfNFeTranspVol>()
                 },
-                infAdic = new Nfe.Schema200.Members.infAdic()
+                infAdic = new Nfe.PL_006u.TNFeInfNFeInfAdic()
                 {
                     infAdFisco = "Nota Fiscal de exemplo NF-eletronica.com"
+                },
+                exporta = new Nfe.PL_006u.TNFeInfNFeExporta()
+                {
+                    UFEmbarq = Nfe.PL_006u.TUf.SP,
+                    xLocEmbarq = "Porto de Santos"
                 }
             };
 
-            nfe.infNFe.det.Add(new Nfe.Schema200.Members.det()
+            nfe.infNFe.det.Add(new Nfe.PL_006u.TNFeInfNFeDet()
             {
                 nItem = "1",
-                prod = new Nfe.Schema200.Members.prod()
+                prod = new Nfe.PL_006u.TNFeInfNFeDetProd()
                 {
                     cProd = "00001",
                     cEAN = "",
                     xProd = "Agua Mineral",
                     NCM = "12002500",
-                    CFOP = "5101",
+                    CFOP = Nfe.PL_006u.TCfop.Item5101,
                     uCom = "dz",
                     qCom = "1000000.0000",
                     vUnCom = "1",
@@ -173,37 +184,38 @@ namespace Reyx.Tester
                     uTrib = "un",
                     qTrib = "12000000.00",
                     vUnTrib = "1",
-                    indTot = "1"
+                    indTot = Nfe.PL_006u.TNFeInfNFeDetProdIndTot.Item1
                 },
-                imposto = new Nfe.Schema200.Members.imposto()
+                imposto = new Nfe.PL_006u.TNFeInfNFeDetImposto()
                 {
-                    ICMS = new Reyx.Nfe.Schema200.Members.ICMS()
-                    {
-                        ICMS00 = new Nfe.Schema200.Members.ICMS00()
+                    Items = new List<object>() {
+                        new Nfe.PL_006u.TNFeInfNFeDetImpostoICMS()
                         {
-                            orig = "0",
-                            CST = "00",
-                            modBC = "0",
-                            vBC = "10000000.00",
-                            pICMS = "18.00",
-                            vICMS = "1800000.00"
+                            Item = new Nfe.PL_006u.TNFeInfNFeDetImpostoICMSICMS00() {
+                                orig = Nfe.PL_006u.Torig.Item0,
+                                CST = Nfe.PL_006u.TNFeInfNFeDetImpostoICMSICMS00CST.Item00,
+                                modBC = Nfe.PL_006u.TNFeInfNFeDetImpostoICMSICMS00ModBC.Item0,
+                                vBC = "10000000.00",
+                                pICMS = "18.00",
+                                vICMS = "1800000.00"
+                            }
                         }
                     },
-                    PIS = new Nfe.Schema200.Members.PIS()
+                    PIS = new Nfe.PL_006u.TNFeInfNFeDetImpostoPIS()
                     {
-                        PISAliq = new Nfe.Schema200.Members.PISAliq()
+                        Item = new Nfe.PL_006u.TNFeInfNFeDetImpostoPISPISAliq()
                         {
-                            CST = "01",
+                            CST = Nfe.PL_006u.TNFeInfNFeDetImpostoPISPISAliqCST.Item01,
                             vBC = "100000000.00",
                             pPIS = "0.65",
                             vPIS = "65000"
                         }
                     },
-                    COFINS = new Nfe.Schema200.Members.COFINS()
+                    COFINS = new Nfe.PL_006u.TNFeInfNFeDetImpostoCOFINS()
                     {
-                        COFINSAliq = new Nfe.Schema200.Members.COFINSAliq()
+                        Item = new Nfe.PL_006u.TNFeInfNFeDetImpostoCOFINSCOFINSAliq()
                         {
-                            CST = "01",
+                            CST = Nfe.PL_006u.TNFeInfNFeDetImpostoCOFINSCOFINSAliqCST.Item01,
                             vBC = "100000000.00",
                             pCOFINS = "2.00",
                             vCOFINS = "200000.00"
@@ -213,16 +225,16 @@ namespace Reyx.Tester
                 }
             });
 
-            nfe.infNFe.det.Add(new Nfe.Schema200.Members.det()
+            nfe.infNFe.det.Add(new Nfe.PL_006u.TNFeInfNFeDet()
             {
                 nItem = "2",
-                prod = new Nfe.Schema200.Members.prod()
+                prod = new Nfe.PL_006u.TNFeInfNFeDetProd()
                 {
                     cProd = "00002",
                     cEAN = "",
                     xProd = "Agua Mineral",
                     NCM = "12002500",
-                    CFOP = "5101",
+                    CFOP = Nfe.PL_006u.TCfop.Item5101,
                     uCom = "pack",
                     qCom = "5000000.0000",
                     vUnCom = "2",
@@ -231,37 +243,38 @@ namespace Reyx.Tester
                     uTrib = "un",
                     qTrib = "3000000.00",
                     vUnTrib = "0.3333",
-                    indTot = "1"
+                    indTot = Nfe.PL_006u.TNFeInfNFeDetProdIndTot.Item1
                 },
-                imposto = new Nfe.Schema200.Members.imposto()
+                imposto = new Nfe.PL_006u.TNFeInfNFeDetImposto()
                 {
-                    ICMS = new Reyx.Nfe.Schema200.Members.ICMS()
-                    {
-                        ICMS00 = new Nfe.Schema200.Members.ICMS00()
+                    Items = new List<object>() {
+                        new Nfe.PL_006u.TNFeInfNFeDetImpostoICMS()
                         {
-                            orig = "0",
-                            CST = "00",
-                            modBC = "0",
-                            vBC = "10000000.00",
-                            pICMS = "18.00",
-                            vICMS = "1800000.00"
+                            Item = new Nfe.PL_006u.TNFeInfNFeDetImpostoICMSICMS00() {
+                                orig = Nfe.PL_006u.Torig.Item0,
+                                CST = Nfe.PL_006u.TNFeInfNFeDetImpostoICMSICMS00CST.Item00,
+                                modBC = Nfe.PL_006u.TNFeInfNFeDetImpostoICMSICMS00ModBC.Item0,
+                                vBC = "10000000.00",
+                                pICMS = "18.00",
+                                vICMS = "1800000.00"
+                            }
                         }
                     },
-                    PIS = new Nfe.Schema200.Members.PIS()
+                    PIS = new Nfe.PL_006u.TNFeInfNFeDetImpostoPIS()
                     {
-                        PISAliq = new Nfe.Schema200.Members.PISAliq()
+                        Item = new Nfe.PL_006u.TNFeInfNFeDetImpostoPISPISAliq()
                         {
-                            CST = "01",
+                            CST = Nfe.PL_006u.TNFeInfNFeDetImpostoPISPISAliqCST.Item01,
                             vBC = "100000000.00",
                             pPIS = "0.65",
                             vPIS = "65000"
                         }
                     },
-                    COFINS = new Nfe.Schema200.Members.COFINS()
+                    COFINS = new Nfe.PL_006u.TNFeInfNFeDetImpostoCOFINS()
                     {
-                        COFINSAliq = new Nfe.Schema200.Members.COFINSAliq()
+                        Item = new Nfe.PL_006u.TNFeInfNFeDetImpostoCOFINSCOFINSAliq()
                         {
-                            CST = "01",
+                            CST = Nfe.PL_006u.TNFeInfNFeDetImpostoCOFINSCOFINSAliqCST.Item01,
                             vBC = "100000000.00",
                             pCOFINS = "2.00",
                             vCOFINS = "200000.00"
@@ -271,7 +284,9 @@ namespace Reyx.Tester
                 }
             });
 
-            nfe.infNFe.transp.vol.Add(new Nfe.Schema200.Members.vol()
+            
+
+            nfe.infNFe.transp.vol.Add(new Nfe.PL_006u.TNFeInfNFeTranspVol()
             {
                 qVol = "10000",
                 esp = "CAIXA",
@@ -279,33 +294,56 @@ namespace Reyx.Tester
                 nVol = "500",
                 pesoL = "1000000000.000",
                 pesoB = "1200000000.000",
-                lacres = new List<Nfe.Schema200.Members.lacres>()
+                lacres = new List<Nfe.PL_006u.TNFeInfNFeTranspVolLacres>()
+                {
+                    new Nfe.PL_006u.TNFeInfNFeTranspVolLacres()
+                    {
+                        nLacre = "XYZ10231486"
+                    }
+                }
             });
 
-            nfe.infNFe.transp.vol.First().lacres.Add(new Nfe.Schema200.Members.lacres()
-            {
-                nLacre = "XYZ10231486"
-            });
-
-            Reyx.Nfe.Schema200.procNFe procNFe = new Nfe.Schema200.procNFe();
+            Reyx.Nfe.PL_006u.TNfeProc procNFe = new Nfe.PL_006u.TNfeProc();
             procNFe.versao = "2.00";
             procNFe.NFe = nfe;
 
-            procNFe.Save(@"C:\users\regis.silva\desktop\procNFe.xml");
+            procNFe.SaveToFile(@"C:\users\user\desktop\procNFe.xml");
 
-            Reyx.Nfe.Schema200.Envio.enviNFe enviNFe = new Nfe.Schema200.Envio.enviNFe()
+            Reyx.Nfe.PL_006u.EnviNFe.TEnviNFe enviNFe = new Nfe.PL_006u.EnviNFe.TEnviNFe()
             {
                 idLote = new Random(132546).Next().ToString(),
                 versao = "2.00"
             };
-            enviNFe.NFe = new List<Nfe.Schema200.NFe>();
-            enviNFe.NFe.Add(procNFe.NFe);
+            enviNFe.NFe = new List<Nfe.PL_006u.EnviNFe.TNFe>();
 
-            enviNFe.Save(@"C:\users\regis.silva\desktop\enviNFe.xml");
+            Nfe.PL_006u.EnviNFe.TNFe procNFeout = new Nfe.PL_006u.EnviNFe.TNFe();
+            Map<Nfe.PL_006u.TNFe, Nfe.PL_006u.EnviNFe.TNFe>(procNFe.NFe, procNFeout);
+            enviNFe.NFe.Add(procNFeout);
+            enviNFe.Save(@"C:\users\user\desktop\enviNFe.xml");
 
             //Reyx.Nfe.Schema200.procNFe teste = Reyx.Nfe.XmlParser.Xml.Load<Nfe.Schema200.procNFe>(@"C:\users\regis.silva\desktop\nfe.xml");
             //Console.WriteLine(teste.NFe.infNFe.emit.xNome);
             //Console.Read();
+        }
+
+        public static void Map<TSource, TDestination>(TSource source, TDestination destination)
+        {
+            var props = typeof(TSource).GetProperties(BindingFlags.Public | BindingFlags.Instance);
+            var type = typeof(TDestination);
+
+            foreach (var prop in props)
+            {
+                object value = prop.GetValue(source, null);
+
+                var prop2 = type.GetProperty(prop.Name);
+                if (prop2 == null)
+                    continue;
+
+                if (prop.PropertyType != prop2.PropertyType)
+                    continue;
+
+                prop2.SetValue(destination, value, null);
+            }
         }
     }
 }
