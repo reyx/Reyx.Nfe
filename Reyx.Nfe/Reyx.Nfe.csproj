@@ -52,10 +52,7 @@
     <Compile Include="Assinatura\Digital.cs" />
     <Compile Include="Assinatura\Certificado.cs" />
     <Compile Include="Extensions.cs" />
-    <Compile Include="INFe.cs" />
     <Compile Include="INotaFiscal.cs" />
-    <Compile Include="IUtil.cs" />
-    <Compile Include="IWebServices.cs" />
     <Compile Include="PL_006u\CancNFe\cancNFe_v2.00.cs" />
     <Compile Include="PL_006u\InutNFe\inutNFe_v2.00.cs" />
     <Compile Include="PL_006u\RetCancNFe\retCancNFe_v2.00.cs" />
@@ -75,8 +72,6 @@
     <Compile Include="PL_006u\ConsReciNFe\consReciNFe_v2.00.cs" />
     <Compile Include="PL_006u\RetConsReciNFe\retConsReciNFe_v2.00.cs" />
     <Compile Include="PL_006u\procNFe_v2.00.cs" />
-    <Compile Include="Util.cs" />
-    <Compile Include="WebServices.cs" />
     <Compile Include="XmlParser\Xml.cs" />
   </ItemGroup>
   <ItemGroup>
