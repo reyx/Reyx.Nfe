@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reyx.Nfe", "Reyx.Nfe\Reyx.Nfe.csproj", "{12520D2A-51F6-4EE9-AAE8-6751E4DEA623}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reyx.Tester", "Reyx.Tester\Reyx.Tester.csproj", "{822D25FD-75BE-4BC3-9E69-B4FBE4B0FF1C}"

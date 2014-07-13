@@ -7,10 +7,16 @@ using System.Xml.Serialization;
 namespace Reyx.Nfe.Schema200.Members
 {
     /// <summary>
-	/// 
-	/// </summary>
-	public class imposto
+    ///
+    /// </summary>
+    public class imposto
     {
+        /// <summary>
+        /// Valor aproximado total de tributos federais, estaduais e municipais
+        /// </summary>
+        [XmlElement]
+        public string vTotTrib { get; set; }
+
         /// <summary>
         /// Grupo do ICMS da Operação própria e ST
         /// </summary>
@@ -38,25 +44,25 @@ namespace Reyx.Nfe.Schema200.Members
         public PIS PIS { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [XmlElement]
         public PISST PISST { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [XmlElement]
         public COFINS COFINS { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [XmlElement]
         public COFINSST COFINSST { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [XmlElement]
         public ISSQN ISSQN { get; set; }

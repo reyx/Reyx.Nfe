@@ -1,15 +1,15 @@
-﻿using System;
+﻿using Reyx.Nfe.XmlParser;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml.Linq;
-using Reyx.Nfe.XmlParser;
 
 namespace Reyx.Tester
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             Reyx.Nfe.Schema200.NFe nfe = new Nfe.Schema200.NFe();
             nfe.infNFe = new Nfe.Schema200.Members.infNFe()
@@ -119,7 +119,8 @@ namespace Reyx.Tester
                         vPIS = "130000.00",
                         vCOFINS = "400000.00",
                         vOutro = "0",
-                        vNF = "20000000.00"
+                        vNF = "20000000.00",
+                        vTotTrib = "0"
                     }
                 },
                 transp = new Nfe.Schema200.Members.transp()
@@ -207,7 +208,8 @@ namespace Reyx.Tester
                             pCOFINS = "2.00",
                             vCOFINS = "200000.00"
                         }
-                    }
+                    },
+                    vTotTrib = "0"
                 }
             });
 
@@ -264,7 +266,8 @@ namespace Reyx.Tester
                             pCOFINS = "2.00",
                             vCOFINS = "200000.00"
                         }
-                    }
+                    },
+                    vTotTrib = "0"
                 }
             });
 
